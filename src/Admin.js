@@ -37,7 +37,9 @@ function Admin() {
   // Fetch jobs from backend
   const fetchJobs = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/jobs");
+      const response = await axios.get(
+        "https://jobportal-backend-6p11.onrender.com/jobs"
+      );
       setJobs(response.data);
     } catch (err) {
       console.error("Error fetching jobs:", err);
@@ -49,7 +51,10 @@ function Admin() {
     e.preventDefault();
     const newJob = { title, company, location, description, url };
     try {
-      await axios.post("http://localhost:8080/jobs", newJob);
+      await axios.post(
+        "https://jobportal-backend-6p11.onrender.com/jobs",
+        newJob
+      );
       alert("Job added successfully!");
       setTitle("");
       setCompany("");
