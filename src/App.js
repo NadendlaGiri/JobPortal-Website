@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchJobs } from "./services/jobService";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import SidebarAd from "./SidebarAd";
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -14,19 +13,13 @@ function App() {
 
   return (
     <div className="d-flex flex-column min-vh-100 position-relative">
-      {/* Sidebar Advertisement */}
-      {/* <SidebarAd /> */}
-
       {/* Header */}
       <header className="bg-dark text-white py-4 shadow d-flex align-items-center position-relative px-4">
-        {/* Logo on the far left */}
         <img
-          src="/logo1.png"
+          src={`${process.env.PUBLIC_URL}/logo1.png`}
           alt="CareerConnect Logo"
           style={{ height: "60px", marginRight: "20px" }}
         />
-
-        {/* Text perfectly centered over the entire header */}
         <div
           className="position-absolute top-50 start-50 translate-middle text-center"
           style={{ width: "100%" }}
@@ -38,10 +31,8 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="container my-5 flex-grow-1">
         <h2 className="text-center mb-4">✨ Available Jobs ✨</h2>
-
         {jobs.length === 0 ? (
           <p className="text-center">No jobs available right now.</p>
         ) : (
@@ -80,7 +71,6 @@ function App() {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="bg-light text-center py-4 border-top mt-auto">
         <p className="mb-1">
           © {new Date().getFullYear()} CareerConnect. All rights reserved.
@@ -100,7 +90,6 @@ function App() {
             >
               🔗 LinkedIn
             </a>
-
             <a
               href="https://nadendlagiri.github.io/My-Portfolio/"
               target="_blank"
@@ -109,7 +98,6 @@ function App() {
             >
               💼 Portfolio
             </a>
-
             <a
               href="mailto:girinadendla1234@gmail.com"
               className="text-decoration-none"
