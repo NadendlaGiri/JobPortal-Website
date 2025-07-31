@@ -81,7 +81,9 @@ function Admin() {
   // Confirm and delete job
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/jobs/${deleteAlert.jobId}`);
+      await axios.delete(
+        `https://jobportal-backend-6p11.onrender.com/jobs/${deleteAlert.jobId}`
+      );
       setJobs(jobs.filter((job) => job.id !== deleteAlert.jobId));
       hideDeleteAlert();
     } catch (err) {
